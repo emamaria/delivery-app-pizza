@@ -1,0 +1,96 @@
+.cecTitle{
+    font-size: 100px;
+    // quitar del Footer.jsx el style={{ fontSize: "80px" }}
+}
+  
+.dataFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+    padding-top: 40px;
+    margin-left: 250px;
+    font-size: 20px;
+    & h1 {
+        margin-bottom: 30px;
+    }
+}
+.IconsFooter {
+    margin: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 250px;
+    justify-content: space-evenly;
+}
+.dataRights {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 15px;
+}
+.footer {
+    background-image: url("https://res.cloudinary.com/ds78avdh8/image/upload/v1652007599/Products/pizza-on-dark-wood-background--with-copyspace_vbe3kg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    // opacity: 0.85;
+    color: white;
+}
+
+@media screen and (max-width: 800px) {
+  
+     .footer{
+        width: 100%;
+        // background-color: black;
+       }
+    .dataFooter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 2px;
+        padding-top: 4px;
+       
+        & h1 {
+            margin-bottom: 3px;
+        }
+
+        font-size: 15px;
+    }
+    .IconsFooter {
+        margin: 2px;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 25px;
+        justify-content: space-evenly;
+      
+    }
+
+    .cecTitle{
+        font-size: 40px;
+    }
+    .dataRights {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 2px;
+        margin-top: 5px;
+        font-size: 8px;
+        margin-left: 10px;
+    }
+
+    .footer {
+        background-image: none;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        // opacity: 0.85;
+        color: white;
+        color: black;
+    }
+}

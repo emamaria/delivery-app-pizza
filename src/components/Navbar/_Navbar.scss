@@ -1,0 +1,94 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-image: linear-gradient(to right, rgba(199, 190, 190, 0.8), rgba(255, 255, 255, 0)), url(https://img.freepik.com/foto-gratis/hora-pizza-sabrosa-pizza-tradicional-casera-receta-italiana_144627-42528.jpg?t=st=1652010028~exp=1652010628~hmac=3a28ae0171f20e1ca90ef8bd3c0d81480da127096d220f70ceefdcb1f01bbff5&w=740);
+    background-size: cover;
+    background-position: 50%;
+
+
+    @media (max-width: 768px) {
+        .navbar img{
+            height:100px;
+            width:100px;
+        }
+        padding: 0;
+        flex-wrap: nowrap;
+
+    }
+
+
+    .navbar_logo img{
+        height:250px;
+        width:250px;
+    }
+    &_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        &-cart img{
+            width: 55px;
+            height: 55px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar_logo img{
+            height:100px;
+            width:100px;
+        }
+        
+    }
+
+
+    &_links-cart {
+        position: relative;
+        padding: 0 0 0 0 ;
+        
+        }
+        &_links-cart_cant {
+            position: absolute;
+            top: 15px;
+            right: 80px;
+            color: red;
+            @media (max-width: 768px) {
+                
+                top: 10px;
+                right: 70px;
+        
+            }
+            }
+
+            &_profile{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                &-img img{
+                height: 150px;
+                width: 150px;
+                @media (max-width: 768px) {
+                    height: 50px;
+                    width: 50px;
+
+                }
+                }
+
+                
+                
+}
+
+
+.block {
+    display: block
+}
+.none {
+    display: none;
+}
+}
+
+

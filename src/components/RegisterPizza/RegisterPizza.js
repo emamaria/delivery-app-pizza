@@ -14,6 +14,10 @@ export const RegisterPizza = () => {
     formData.append("img", data.img[0]);
     formData.append("price", Number(data.price));
     formData.append("name", data.name);
+    formData.append("description", data.description);
+    formData.append("ingredients", data.ingredients);
+    formData.append("allergic", data.allergic);
+    formData.append("category", data.category);
     API.post(`/products/pizzas/`, formData, {
       headers: {
         Authorization: `Bearer ${userToken}`,
@@ -24,7 +28,7 @@ export const RegisterPizza = () => {
           "Correcto",
           "El producto se creó correctamente en la base de datos.",
           "success"
-        );
+        ).then(() => window.location.reload(true));
       } else {
         Swal.fire({
           icon: "error",
@@ -42,11 +46,11 @@ export const RegisterPizza = () => {
         <section className="col-12 col-sm-6 col-md-3">
           <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
             <div className="p-5">
-              <h1 className="text-center">Crea un producto</h1>
+              <h1 className="text-center">Crear pizza</h1>
             </div>
 
             <div className="form-group">
-              <label htmlFor="bebida">Nombre de la nueva bebida:</label>
+              <label htmlFor="bebida">Nombre:</label>
               <input
                 className="ml-2"
                 type="text"
@@ -83,6 +87,36 @@ export const RegisterPizza = () => {
                 name="description"
                 id="descripcion"
                 {...register("description", { required: false })}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="ingredients">Ingredientes:</label>
+              <input
+                className="ml-2"
+                type="text"
+                name="ingredients"
+                id="ingredients"
+                {...register("ingredients", { required: true })}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="allergic">Alérgenos:</label>
+              <input
+                className="ml-2"
+                type="text"
+                name="allergic"
+                id="allergic"
+                {...register("allergic", { required: false })}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="category">Categoria:</label>
+              <input
+                className="ml-2"
+                type="text"
+                name="category"
+                id="category"
+                {...register("category", { required: true })}
               />
             </div>
             <button className="btn btn-primary btn-block">

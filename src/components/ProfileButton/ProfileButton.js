@@ -6,10 +6,13 @@ import MenuItem from "@mui/material/MenuItem";
 import { useCartContext } from "../../shared/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 import { JwtContext } from "../../shared/contexts/JwtContext";
+import { useUserContext } from "../../shared/contexts/UserContext";
 
 export default function ProfileButton() {
   let user = JSON.parse(localStorage.getItem("user"));
   console.log(user);
+
+  const { userRole } = useUserContext();
 
   function handleClose(action) {
     if (action === "perfil") {
@@ -20,6 +23,12 @@ export default function ProfileButton() {
       setAnchorEl(null);
     } else if (action === "cerrar") {
       setAnchorEl(null);
+    } else if (action === "crearPizza") {
+      navigate("/admin/post/pizzas")
+    } else if (action === "crearBeverage") {
+      navigate("/admin/post/beverages")
+    } else if (action === "crearDessert") {
+      navigate("/admin/post/desserts")
     }
   }
 
@@ -71,6 +80,10 @@ export default function ProfileButton() {
       >
         <MenuItem onClick={() => handleClose("perfil")}>Profile</MenuItem>
         <MenuItem onClick={() => handleClose("pedidos")}>Mis Pedidos</MenuItem>
+
+        { userRole === 'admin' && <MenuItem onClick={() => handleClose("crearPizza")}>Crear pizza</MenuItem> }
+        { userRole === 'admin' && <MenuItem onClick={() => handleClose("crearBeverage")}>Crear bebida</MenuItem> }
+        { userRole === 'admin' && <MenuItem onClick={() => handleClose("crearDessert")}>Crear postre</MenuItem> }
         <MenuItem onClick={logOut}>LogOut</MenuItem>
         <MenuItem onClick={() => handleClose("cerrar")}>Cerrar x</MenuItem>
       </Menu>

@@ -26,7 +26,7 @@ export const RegisterBeverage = () => {
           "Correcto",
           "El producto se creó correctamente en la base de datos.",
           "success"
-        );
+        ).then(() => window.location.reload(true));
       } else {
         Swal.fire({
           icon: "error",
@@ -44,11 +44,11 @@ export const RegisterBeverage = () => {
         <section className="col-12 col-sm-6 col-md-3">
           <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
             <div className="p-5">
-              <h1 className="text-center">Crea un producto</h1>
+              <h1 className="text-center">Crear bebida</h1>
             </div>
 
             <div className="form-group">
-              <label htmlFor="bebida">Nombre de la nueva bebida:</label>
+              <label htmlFor="bebida">Nombre:</label>
               <input
                 className="ml-2"
                 type="text"
